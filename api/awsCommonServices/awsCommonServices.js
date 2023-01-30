@@ -4,6 +4,16 @@ const fs = require("fs");
 const path = require("path");
 const randomString = require("randomstring");
 
+
+//upload file 
+/**
+ *
+ * @param {*} location
+ * @param {*} client
+ * @param {*} project
+ * @returns
+ */
+
 async function uploadFile(location, client, project) {
   try {
     const s3 = new AWS.S3({
@@ -66,6 +76,13 @@ async function uploadFile(location, client, project) {
 
 //Find all objects
 
+/**
+ *
+ * @param {*} client
+ * @param {*} project
+ * @returns
+ */
+
 async function findAll(client, project) {
   try {
     const s3 = new AWS.S3({
@@ -91,6 +108,11 @@ async function findAll(client, project) {
 }
 
 //Find Single object
+/**
+ *
+ * @param {*} key
+ * @returns
+ */
 async function findSingleObject(key) {
   try {
     const s3 = new AWS.S3({
@@ -112,6 +134,12 @@ async function findSingleObject(key) {
 }
 
 //remove objects
+/**
+ *
+ * @param {*} client
+ * @param {*} project
+ * @returns
+ */
 
 async function removeObjects(client, project) {
   try {
